@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Демо-сайт компании — Официальный представитель</title>
+  <meta name="description" content="Интерактивный прототип современного корпоративного сайта: услуги, прайс, актуальные новости и онлайн-запись 24/7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow -->
+  <div class="glow-bg top-glow"></div>
+  <div class="glow-bg center-glow"></div>
+
+  <!-- Interactive Demo Badge Banner -->
+  <div class="demo-top-bar">
+    <div class="container demo-bar-inner">
+      <span class="badge pulse-badge">Интерактивный концепт</span>
+      <span class="demo-bar-text">Готовое решение для бизнеса с онлайн-записью, каталогом и мобильной адаптацией</span>
+      <a href="#booking" class="demo-bar-btn">Проверить онлайн-запись →</a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-icon">✦</span>
+        <span id="brand-name" class="brand-text">Бизнес Концепт</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Услуги</a>
+        <a href="#about">О компании</a>
+        <a href="#news">Новости & Акции</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#booking" class="btn btn-primary btn-sm">Записаться онлайн</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag" id="hero-tag">Качественный сервис и забота о клиентах</div>
+          <h1 class="hero-title" id="hero-title">
+            Современные решения и надежный сервис для <span class="gradient-text" id="hero-city">Челябинска</span>
+          </h1>
+          <p class="hero-desc" id="hero-desc">
+            Работаем на качество и результат. Прозрачные цены, сертифицированные специалисты, гарантия на все виды работ и удобная онлайн-запись в пару кликов.
+          </p>
+          <div class="hero-buttons">
+            <a href="#booking" class="btn btn-primary btn-lg">Записаться на консультацию</a>
+            <a href="#services" class="btn btn-secondary btn-lg">Изучить каталог & прайс</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-num">98%</span>
+              <span class="metric-label">Довольных клиентов</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-num">15 мин</span>
+              <span class="metric-label">Скорость ответа</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-num">24/7</span>
+              <span class="metric-label">Онлайн-запись</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glass-card hero-preview-card">
+            <div class="card-header-status">
+              <span class="status-indicator"></span>
+              <span id="card-status-text">Открыто прямо сейчас • Работаем без выходных</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <div>
+                <h4>Официальная гарантия</h4>
+                <p>Фиксируем стоимость до начала работ и строго соблюдаем сроки</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚡</div>
+              <div>
+                <h4>Быстрая обработка заявок</h4>
+                <p>Мгновенное подтверждение в WhatsApp и Telegram</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💎</div>
+              <div>
+                <h4>Прозрачный прайс</h4>
+                <p>Никаких скрытых платежей, комиссий и неожиданных доплат</p>
+              </div>
+            </div>
+            <div class="card-footer-cta">
+              <a href="#booking" class="btn btn-accent full-width">Оформить заявку со скидкой 10%</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Products Catalog -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="sub-badge">Направления & Прайс</span>
+          <h2 class="section-title">Популярные услуги и предложения</h2>
+          <p class="section-desc">Выберите подходящее направление для расчета точной стоимости и оформления заявки</p>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Dynamically populated or default fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Company & Values -->
+    <section class="section bg-surface" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-info">
+            <span class="sub-badge">О нас</span>
+            <h2 class="section-title">Почему клиенты выбирают нас снова и снова</h2>
+            <p class="text-muted">
+              Мы создаем комфортные условия для каждого клиента: детально разбираем задачу, предлагаем оптимальные варианты решения без переплат и сопровождаем на каждом этапе.
+            </p>
+            <div class="advantages-list">
+              <div class="adv-item">
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong>Опытная команда мастеров</strong>
+                  <p>Каждый специалист имеет подтвержденную квалификацию и практический опыт от 5 лет.</p>
+                </div>
+              </div>
+              <div class="adv-item">
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong>Удобная локация и логистика</strong>
+                  <p id="about-address">Удобный подъезд, собственная парковка и комфортная зона ожидания.</p>
+                </div>
+              </div>
+              <div class="adv-item">
+                <span class="check-icon">✓</span>
+                <div>
+                  <strong>Прямая связь без посредников</strong>
+                  <p>Общайтесь напрямую с ответственным мастером в удобном мессенджере.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats-card glass-card">
+            <h3>Показатели надежности</h3>
+            <div class="stats-row">
+              <div class="stat-box">
+                <span class="stat-digit">7+</span>
+                <span class="stat-text">Лет опыта на рынке</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-digit">4.9</span>
+                <span class="stat-text">Средняя оценка по отзывам</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-digit">3500+</span>
+                <span class="stat-text">Успешно выполненных заказов</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-digit">100%</span>
+                <span class="stat-text">Соблюдение стандартов ГОСТ/СанПиН</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News & Special Offers -->
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="sub-badge">Актуально</span>
+          <h2 class="section-title">Новости и спецпредложения</h2>
+          <p class="section-desc">Узнавайте первыми о скидках, сезонных акциях и обновлениях</p>
+        </div>
+
+        <div class="news-grid" id="news-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Booking & Lead Form -->
+    <section class="section bg-surface" id="booking">
+      <div class="container">
+        <div class="booking-wrap glass-card">
+          <div class="booking-left">
+            <span class="sub-badge">Онлайн-запись</span>
+            <h2 class="section-title">Забронируйте удобное время или получите консультацию</h2>
+            <p class="text-muted">
+              Заполните форму ниже — мы перезвоним в течение 10 минут, уточним детали и подтвердим удобное для вас время.
+            </p>
+            <div class="booking-perks">
+              <div class="perk-pill">⚡ Мгновенный ответ</div>
+              <div class="perk-pill">🎁 Скидка 10% на первый заказ</div>
+              <div class="perk-pill">🔒 Без спама</div>
+            </div>
+          </div>
+
+          <div class="booking-right">
+            <form id="booking-form" class="interactive-form">
+              <div class="form-group">
+                <label for="client-name">Ваше имя *</label>
+                <input type="text" id="client-name" placeholder="Например, Алексей" required>
+              </div>
+
+              <div class="form-group">
+                <label for="client-phone">Номер телефона *</label>
+                <input type="tel" id="client-phone" placeholder="+7 (999) 000-00-00" required>
+              </div>
+
+              <div class="form-group">
+                <label for="service-select">Интересующая услуга / вопрос</label>
+                <select id="service-select">
+                  <option value="consultation">Бесплатная консультация и расчет</option>
+                  <option value="standard">Базовый комплекс услуг</option>
+                  <option value="premium">Премиальный пакет под ключ</option>
+                  <option value="urgent">Срочный выезд / экспресс-заказ</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="client-note">Комментарий или пожелания</label>
+                <textarea id="client-note" rows="3" placeholder="Укажите дату, время или особенности вашего заказа..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary full-width" id="submit-btn">Отправить заявку →</button>
+              <div id="form-success" class="alert-success" style="display: none;">
+                ✓ Спасибо! Заявка успешно принята в демо-режиме. Специалист свяжется с вами в течение 10 минут.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="sub-badge">Доверие</span>
+          <h2 class="section-title">Что говорят наши постоянные клиенты</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card glass-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">«Обращаюсь уже не первый раз. Все быстро, четко по прайсу и без лишних навязанных услуг. Очень удобно записаться через сайт!»</p>
+            <div class="review-author">
+              <div class="author-avatar">МК</div>
+              <div>
+                <strong>Михаил Ковалев</strong>
+                <span class="author-role">г. Челябинск</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">«Отличный сервис и внимательное отношение. Подобрали удобное время, мастер приехал вовремя со всем необходимым оборудованием.»</p>
+            <div class="review-author">
+              <div class="author-avatar">ЕС</div>
+              <div>
+                <strong>Елена Смирнова</strong>
+                <span class="author-role">г. Челябинск</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card glass-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">«Приятно удивлен качеством и прозрачностью. Цену назвали сразу, чек и гарантию выдали на руки. Однозначно рекомендую!»</p>
+            <div class="review-author">
+              <div class="author-avatar">АВ</div>
+              <div>
+                <strong>Артем Васильев</strong>
+                <span class="author-role">г. Челябинск</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts / Map Section -->
+    <section class="section bg-surface" id="contacts">
+      <div class="container">
+        <div class="contacts-card glass-card">
+          <div class="contacts-info">
+            <span class="sub-badge">Как нас найти</span>
+            <h2 class="section-title">Контакты и график работы</h2>
+            <div class="contact-rows">
+              <div class="c-row">
+                <span class="c-icon">📍</span>
+                <div>
+                  <strong>Адрес:</strong>
+                  <p id="contact-address">Челябинск, ул. Бейвеля / ул. Хариса Юсупова</p>
+                </div>
+              </div>
+              <div class="c-row">
+                <span class="c-icon">📞</span>
+                <div>
+                  <strong>Телефон:</strong>
+                  <p><a href="tel:+78005553535" id="contact-phone">+7 (800) 555-35-35</a></p>
+                </div>
+              </div>
+              <div class="c-row">
+                <span class="c-icon">⏰</span>
+                <div>
+                  <strong>Режим работы:</strong>
+                  <p id="contact-hours">Ежедневно: с 09:00 до 21:00</p>
+                </div>
+              </div>
+              <div class="c-row">
+                <span class="c-icon">💬</span>
+                <div>
+                  <strong>Мессенджеры:</strong>
+                  <p>
+                    <a href="https://t.me" target="_blank" class="chat-link">Telegram</a> • 
+                    <a href="https://wa.me" target="_blank" class="chat-link">WhatsApp</a> • 
+                    <a href="https://vk.com" target="_blank" class="chat-link">ВКонтакте</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <div class="map-box">
+              <span class="map-pin-pulse">📍</span>
+              <h4 id="map-label">Локация на Яндекс Картах</h4>
+              <p>Удобный подъезд и парковка для клиентов</p>
+              <a href="https://yandex.ru/maps" target="_blank" class="btn btn-secondary btn-sm" id="yandex-map-btn">Открыть на Яндекс Картах →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        <p>© 2026 <span id="footer-brand">Компания</span>. Все права защищены.</p>
+        <p class="text-sm">Демонстрационный сайт разработан агентством веб-разработки и цифрового маркетинга.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Услуги</a>
+        <a href="#news">Новости</a>
+        <a href="#booking">Запись</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

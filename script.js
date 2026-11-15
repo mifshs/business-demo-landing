@@ -1,181 +1,217 @@
-// Dynamic URL Parameters Parser and Landing Engine
+// Dynamic URL Parameters & Sanctuary Theme Customizer
 (function() {
   const urlParams = new URLSearchParams(window.location.search);
   
   // Customization parameters from query string
-  const brandName = urlParams.get('brand') || urlParams.get('name') || 'Бизнес Концепт';
-  const category = urlParams.get('category') || urlParams.get('niche') || 'Услуги и сервис';
-  const city = urlParams.get('city') || 'Челябинск';
-  const address = urlParams.get('address') || 'ул. Бейвеля / ул. Хариса Юсупова';
-  const phone = urlParams.get('phone') || '+7 (999) 000-00-00';
+  const brandName = urlParams.get('brand') || urlParams.get('name') || 'Дом мира';
+  const category = urlParams.get('category') || urlParams.get('niche') || 'Парк-отель & Экотуризм';
+  const city = urlParams.get('city') || 'Изборско-Мальская долина';
+  const address = urlParams.get('address') || 'Псковская обл., Печорский р-н';
+  const phone = urlParams.get('phone') || '+7 (911) 698-87-30';
 
-  // Apply to Document and Header
+  // Apply to Document Title and Branding
   document.title = `${brandName} — Официальный сайт (${city})`;
-  const brandEl = document.getElementById('brand-name');
-  if (brandEl) brandEl.textContent = brandName;
 
-  const footerBrand = document.getElementById('footer-brand');
-  if (footerBrand) footerBrand.textContent = brandName;
+  const brandTitleEl = document.getElementById('brand-title');
+  if (brandTitleEl) brandTitleEl.textContent = brandName;
 
-  const heroTag = document.getElementById('hero-tag');
-  if (heroTag) heroTag.textContent = `Качественный сервис • ${category}`;
+  const brandTagline = document.getElementById('brand-tagline');
+  if (brandTagline) brandTagline.textContent = city;
 
-  const heroTitle = document.getElementById('hero-title');
-  if (heroTitle) {
-    heroTitle.innerHTML = `Современные решения и надежный сервис для <span class="gradient-text">${city}</span>`;
+  const brandSubline = document.getElementById('brand-subline');
+  if (brandSubline) brandSubline.textContent = category.toUpperCase();
+
+  const heroNameAccent = document.getElementById('hero-name-accent');
+  if (heroNameAccent) heroNameAccent.textContent = `«${brandName}»`;
+
+  const topBarGeo = document.getElementById('top-bar-geo');
+  if (topBarGeo) topBarGeo.textContent = `📍 ${address}, ${city}`;
+
+  const headerPhone = document.getElementById('header-phone');
+  if (headerPhone) {
+    headerPhone.textContent = phone;
+    headerPhone.href = `tel:${phone.replace(/[^\d+]/g, '')}`;
   }
 
-  const heroCity = document.getElementById('hero-city');
-  if (heroCity) heroCity.textContent = city;
-
-  const aboutAddress = document.getElementById('about-address');
-  if (aboutAddress) {
-    aboutAddress.textContent = `Удобный подъезд по адресу: ${city}, ${address}. Всегда свободная парковка.`;
+  const routePhone = document.getElementById('route-phone-link');
+  if (routePhone) {
+    routePhone.textContent = phone;
+    routePhone.href = `tel:${phone.replace(/[^\d+]/g, '')}`;
   }
 
-  const contactAddress = document.getElementById('contact-address');
-  if (contactAddress) contactAddress.textContent = `${city}, ${address}`;
+  const routeAddrText = document.getElementById('route-address-text');
+  if (routeAddrText) routeAddrText.textContent = `${address}, ${city}`;
 
-  const contactPhone = document.getElementById('contact-phone');
-  if (contactPhone) {
-    contactPhone.textContent = phone;
-    contactPhone.href = `tel:${phone.replace(/[^\d+]/g, '')}`;
+  const footerBrand = document.getElementById('footer-brand-name');
+  if (footerBrand) footerBrand.textContent = brandName.toUpperCase();
+
+  const routeYandexBtn = document.getElementById('route-yandex-btn');
+  if (routeYandexBtn) {
+    routeYandexBtn.href = `https://yandex.ru/maps/?text=${encodeURIComponent(`${brandName} ${city} ${address}`)}`;
   }
 
-  const yandexMapBtn = document.getElementById('yandex-map-btn');
-  if (yandexMapBtn) {
-    yandexMapBtn.href = `https://yandex.ru/maps/?text=${encodeURIComponent(`${brandName} ${city} ${address}`)}`;
-  }
-
-  // Niche-tailored content presets
+  // Niche-tailored content presets for dynamic demos
   const nichePresets = {
     beauty: {
-      services: [
-        { icon: '💅', title: 'Маникюр и авторский педикюр', desc: 'Стерильные инструменты, премиальные покрытия и стойкость от 3-х недель.', points: ['Аппаратная обработка', 'Выравнивание и укрепление', 'Снятие в подарок'], price: 'от 1 800 ₽' },
-        { icon: '✨', title: 'Сложные техники окрашивания', desc: 'AirTouch, Shatush, Balayage с бережным сохранением структуры волос.', points: ['Премиальные красители', 'Уход-защита Olaplex', 'Точный подбор оттенка'], price: 'от 4 500 ₽' },
-        { icon: '🧖‍♀️', title: 'Комплексный SPA-уход & массаж', desc: 'Глубокое восстановление, расслабление и оздоровление кожи.', points: ['Органическая косметика', 'Индивидуальная программа', 'Чайная церемония'], price: 'от 2 500 ₽' }
+      tag: "Салон красоты & СПА-пространство",
+      headline: `Премиальный уход и эстетика в студии `,
+      desc: "Уютная атмосфера заботы, авторские техники окрашивания, маникюр в 4 руки, японские спа-ритуалы и тишина для вашей перезагрузки.",
+      pills: [
+        { icon: "✨", label: "Стерильность", val: "Стандарты СанПиН 100%" },
+        { icon: "💅", label: "Услуги", val: "Маникюр, брови и стрижки" },
+        { icon: "⚡", label: "Без ожидания", val: "Онлайн-запись 24/7" },
+        { icon: "☕", label: "Атмосфера", val: "Кофе и чайная карта" }
       ],
-      news: [
-        { tag: 'Скидка недели', title: '-15% на первый визит к топ-мастеру', desc: 'Запишитесь на любую услугу через форму на сайте и получите скидку на дебютное посещение.', date: 'До конца месяца' },
-        { tag: 'Новинка', title: 'Премиальная линейка японского ухода', desc: 'В салон поступила новая сертифицированная коллекция салонных уходов для восстановления волос.', date: 'Свежее поступление' },
-        { tag: 'Бонус', title: 'Подарочные сертификаты с доставкой', desc: 'Электронные и дизайнерские печатные сертификаты на любые суммы и комплексы процедур.', date: 'В наличии' }
+      filterLabel: "ВЫБЕРИТЕ УСЛУГУ / МАСТЕРА",
+      filterOptions: [
+        "Комплекс: маникюр + педикюр в 4 руки",
+        "Сложное окрашивание (AirTouch/Шатуш)",
+        "SPA-уход для волос и массаж головы",
+        "Оформление бровей и ламинирование ресниц"
       ]
     },
     auto: {
-      services: [
-        { icon: '🔧', title: 'Комплексное ТО и диагностика', desc: 'Полная компьютерная проверка всех систем авто перед сезоном или дальней поездкой.', points: ['Проверка 45 параметров', 'Чтение ошибок сканером', 'Оригинальные расходники'], price: 'от 2 000 ₽' },
-        { icon: '🚜', title: 'Ремонт узлов и спецтехники', desc: 'Ремонт гидравлики, коробок передач, подвески и выхлопных систем любой сложности.', points: ['Гарантия 12 месяцев', 'Собственный склад запчастей', 'Опытные мотористы'], price: 'от 3 500 ₽' },
-        { icon: '⚡', title: 'Экспресс-замена масел и жидкостей', desc: 'Быстрое обслуживание без очередей по предварительной записи за 30 минут.', points: ['Масла ведущих брендов', 'Замена фильтров', 'Бесплатный осмотр подвески'], price: 'от 1 200 ₽' }
+      tag: "Спецтехника & Автосервис",
+      headline: `Надежный сервис и аренда спецтехники в `,
+      desc: "Собственный парк строительной и дорожной техники, опытные операторы, оперативная подача на объект и прозрачные сметы без скрытых платежей.",
+      pills: [
+        { icon: "🚜", label: "Автопарк", val: "Экскаваторы и манипуляторы" },
+        { icon: "🛡️", label: "Гарантия", val: "Официальный договор и ЭДО" },
+        { icon: "⚡", label: "Скорость", val: "Подача от 60 минут" },
+        { icon: "👨‍🔧", label: "Опыт", val: "Аттестованные машинисты" }
       ],
-      news: [
-        { tag: 'Акция', title: 'Бесплатная диагностика подвески при замене масла', desc: 'Пройдите плановое обслуживание и получите полный отчет о состоянии ходовой части бесплатно.', date: 'Актуально сейчас' },
-        { tag: 'Спецпредложение', title: 'Подготовка автомобиля к сезону', desc: 'Пакетное предложение: проверка аккумулятора, тормозной системы и заправка кондиционера со скидкой 20%.', date: 'Сезонное предложение' },
-        { tag: 'Запчасти', title: 'Прямые поставки запчастей без наценки', desc: 'Доставка деталей для иномарок и спецтехники за 24 часа напрямую от дистрибьюторов.', date: 'В наличии на складе' }
+      filterLabel: "ТИП ТЕХНИКИ / ВИД РАБОТ",
+      filterOptions: [
+        "Аренда мини-экскаватора (от 4 часов)",
+        "Манипулятор 5-10 тонн с люлькой",
+        "Комплексная разработка котлована",
+        "Эвакуация и транспортировка спецтехники"
+      ]
+    },
+    flowers: {
+      tag: "Цветочная мастерская & Доставка",
+      headline: `Авторские букеты и свежая флористика от `,
+      desc: "Цветы премиальных плантаций Голландии и Эквадора, дизайнерская упаковка, фотоконтроль перед отправкой и бережная доставка точно ко времени.",
+      pills: [
+        { icon: "🌸", label: "Свежесть", val: "Поставки 3 раза в неделю" },
+        { icon: "📸", label: "Контроль", val: "Фото букета перед отправкой" },
+        { icon: "⚡", label: "Доставка", val: "От 45 минут по городу" },
+        { icon: "💌", label: "Комплимент", val: "Открытка к каждому заказу" }
+      ],
+      filterLabel: "ПОВОД / БЮДЖЕТ БУКЕТА",
+      filterOptions: [
+        "Авторский букет гигант (от 5 000 ₽)",
+        "Монобукет из пионовидных роз",
+        "Сборная композиция в шляпной коробке",
+        "Свадебная флористика под ключ"
       ]
     },
     engineering: {
-      services: [
-        { icon: '🚰', title: 'Инженерная сантехника и фитинги', desc: 'Трубы, краны, коллекторы и запорная арматура проверенных производителей.', points: ['В наличии на складе', 'Сертификаты ГОСТ', 'Оптовые цены для мастеров'], price: 'от 350 ₽' },
-        { icon: '⚡', title: 'Кабель, автоматика и щитовое оборудование', desc: 'Все для надежной электропроводки, автоматические выключатели и УЗО.', points: ['ГОСТ кабель (ВВГ-Пнг)', 'ABB, Schneider, IEK', 'Резерв за 15 минут'], price: 'от 500 ₽' },
-        { icon: '🛠️', title: 'Подбор и комплектация под проект', desc: 'Быстрый расчет сметы по проекту или списку мастера в WhatsApp с доставкой на объект.', points: ['Расчет за 20 минут', 'Скидка на объем от 10%', 'Возврат остатков'], price: 'Бесплатно' }
+      tag: "Инженерная сантехника & Электрика",
+      headline: `Качественные материалы для монтажа от `,
+      desc: "Трубы, фитинги, коллекторы, автоматика и кабель по ГОСТу. Быстрый резерв товара за 15 минут и оптовые спеццены для мастеров-монтажников.",
+      pills: [
+        { icon: "🚰", label: "Склад", val: "Более 5 000 позиций в наличии" },
+        { icon: "⚡", label: "Резерв", val: "Сборка заказа за 15 минут" },
+        { icon: "📑", label: "Стандарты", val: "Сертификаты ГОСТ и ISO" },
+        { icon: "🚚", label: "Логистика", val: "Срочная доставка на объект" }
       ],
-      news: [
-        { tag: 'Для мастеров', title: 'Клуб постоянных монтажников со спецценами', desc: 'Подключайтесь к партнерской программе и получайте максимальные скидки на опт.', date: 'Действует постоянно' },
-        { tag: 'Поступление', title: 'Новая поставка коллекторных групп и насосов', desc: 'Расширение складского ассортимента оборудования для водяного теплого пола.', date: 'Новинки каталога' },
-        { tag: 'Доставка', title: 'Срочная доставка на объект по звонку за 2 часа', desc: 'Не останавливайте стройку: привезем необходимые комплектующие прямо к подъезду.', date: 'Ежедневно' }
+      filterLabel: "КАТЕГОРИЯ ОБОРУДОВАНИЯ",
+      filterOptions: [
+        "Отопление и водяной теплый пол",
+        "Трубы сшитый полиэтилен и фитинги",
+        "Кабель ВВГ-Пнг и модульная автоматика",
+        "Насосные станции и гидроаккумуляторы"
       ]
     },
     driving: {
-      services: [
-        { icon: '🚗', title: 'Обучение на категорию «B» (МКПП/АКПП)', desc: 'Полный теоретический и практический курс с сопровождением в ГИБДД.', points: ['Удобный график занятий', 'Рассрочка 0% без банка', 'Новые иномарки'], price: 'от 24 900 ₽' },
-        { icon: '🏍️', title: 'Категория «A» — курс вождения мотоцикла', desc: 'Закрытый оборудованный автодром, профессиональная экипировка и тренеры.', points: ['Собственная мото-площадка', 'Отработка баланса и контрманевров', 'Сдача экзамена'], price: 'от 18 000 ₽' },
-        { icon: '🎯', title: 'Восстановление навыков вождения', desc: 'Индивидуальные занятия с инструктором по городским маршрутам и парковке.', points: ['Преодоление страха потока', 'Маршрут дом-работа', 'Отработка сложных перекрестков'], price: 'от 1 500 ₽/час' }
+      tag: "Автошкола & Обучение вождению",
+      headline: `Уверенное вождение и права категорий А/В в `,
+      desc: "Современный автопарк, закрытый автодром, рассрочка 0% без переплат, онлайн-теория в мобильном приложении и полное сопровождение на экзамене в ГИБДД.",
+      pills: [
+        { icon: "🚗", label: "Автопарк", val: "Новые иномарки МКПП / АКПП" },
+        { icon: "💳", label: "Оплата", val: "Рассрочка 0% от 2 500 ₽/мес" },
+        { icon: "📱", label: "Теория", val: "Онлайн в приложении 24/7" },
+        { icon: "🎯", label: "Результат", val: "Сдача экзамена с 1-го раза" }
       ],
-      news: [
-        { tag: 'Набор группы', title: 'Старт новой вечерней группы в этом месяце', desc: 'Осталось 4 свободных места. Зафиксируйте стоимость обучения со скидкой 3000 ₽.', date: 'Идет запись' },
-        { tag: 'Рассрочка', title: 'Обучение в рассрочку от 2 500 ₽ в месяц', desc: 'Оплачивайте учебу частями на протяжении всего периода вождения без переплат.', date: 'Без первого взноса' },
-        { tag: 'Онлайн', title: 'Теория онлайн в мобильном приложении', desc: 'Изучайте ПДД в удобное время с разбором билетов и поддержкой преподавателя 24/7.', date: 'Доступ сразу' }
-      ]
-    },
-    general: {
-      services: [
-        { icon: '⭐', title: 'Базовый пакет услуг', desc: 'Оптимальное решение для типовых задач с фиксированной гарантией результата.', points: ['Быстрое согласование', 'Официальный договор', 'Прозрачная смета'], price: 'от 1 500 ₽' },
-        { icon: '🚀', title: 'Комплексное обслуживание под ключ', desc: 'Полный цикл работ с индивидуальным подходом и персональным менеджером.', points: ['Контроль качества', 'Соблюдение дедлайнов', 'Гарантия до 2-х лет'], price: 'от 4 900 ₽' },
-        { icon: '💎', title: 'Премиум / Экспресс-формат', desc: 'Максимальный приоритет, оперативное исполнение и индивидуальные условия.', points: ['Выезд в день обращения', 'Персональный подход', 'Поддержка 24/7'], price: 'от 9 900 ₽' }
-      ],
-      news: [
-        { tag: 'Сезонное предложение', title: 'Специальная цена на комплексные заказы', desc: 'При заказе двух и более услуг предоставляется приятная скидка 15%.', date: 'Специальные условия' },
-        { tag: 'Обновление', title: 'Мы улучшили стандарты обслуживания клиентов', desc: 'Внедрили мгновенные уведомления в мессенджерах и сократили время ответа до 10 минут.', date: 'Новый сервис' },
-        { tag: 'Подарки', title: 'Бонусная программа для постоянных клиентов', desc: 'Копите баллы за каждое обращение и оплачивайте ими до 30% стоимости следующих заказов.', date: 'Программа лояльности' }
+      filterLabel: "ПРОГРАММА ОБУЧЕНИЯ",
+      filterOptions: [
+        "Категория «B» — полный курс вождения",
+        "Категория «A» — управление мотоциклом",
+        "VIP-курс с персональным инструктором",
+        "Восстановление навыков вождения"
       ]
     }
   };
 
-  // Determine niche key
-  const catLower = (category + ' ' + brandName).toLowerCase();
-  let selectedNiche = 'general';
-  if (catLower.includes('бьюти') || catLower.includes('салон') || catLower.includes('красот') || catLower.includes('маникюр') || catLower.includes('стрижк')) {
-    selectedNiche = 'beauty';
-  } else if (catLower.includes('авто') || catLower.includes('сервис') || catLower.includes('техник') || catLower.includes('машин') || catLower.includes('ремонт авто')) {
-    selectedNiche = 'auto';
-  } else if (catLower.includes('сантехник') || catLower.includes('электрик') || catLower.includes('труб') || catLower.includes('инженер')) {
-    selectedNiche = 'engineering';
-  } else if (catLower.includes('школ') || catLower.includes('автошкол') || catLower.includes('обучен') || catLower.includes('права')) {
-    selectedNiche = 'driving';
+  // Detect niche
+  const combined = (category + ' ' + brandName).toLowerCase();
+  let currentNiche = null;
+  if (combined.includes('бьюти') || combined.includes('салон') || combined.includes('красот')) {
+    currentNiche = nichePresets.beauty;
+  } else if (combined.includes('авто') || combined.includes('спецтехник') || combined.includes('сервис')) {
+    currentNiche = nichePresets.auto;
+  } else if (combined.includes('цвет') || combined.includes('флорист') || combined.includes('букет')) {
+    currentNiche = nichePresets.flowers;
+  } else if (combined.includes('сантехник') || combined.includes('электрик') || combined.includes('инженер')) {
+    currentNiche = nichePresets.engineering;
+  } else if (combined.includes('школ') || combined.includes('автошкол') || combined.includes('вод')) {
+    currentNiche = nichePresets.driving;
   }
 
-  const nicheData = nichePresets[selectedNiche] || nichePresets.general;
+  if (currentNiche) {
+    const heroH1 = document.getElementById('hero-headline');
+    if (heroH1) {
+      heroH1.innerHTML = `${currentNiche.headline} <span class="headline-serif">«${brandName}»</span>`;
+    }
+    const heroDesc = document.getElementById('hero-description');
+    if (heroDesc) heroDesc.textContent = currentNiche.desc;
 
-  // Render Services
-  const servicesGrid = document.getElementById('services-grid');
-  if (servicesGrid) {
-    servicesGrid.innerHTML = nicheData.services.map(s => `
-      <div class="service-card">
-        <div class="service-card-top">
-          <span class="s-icon">${s.icon}</span>
-          <h3>${s.title}</h3>
-          <p>${s.desc}</p>
-          <ul class="s-points">
-            ${s.points.map(p => `<li>${p}</li>`).join('')}
-          </ul>
+    // Replace 4 feature pills
+    const pillsContainer = document.getElementById('feature-cards-row');
+    if (pillsContainer) {
+      pillsContainer.innerHTML = currentNiche.pills.map(p => `
+        <div class="f-pill-card">
+          <div class="f-pill-icon">${p.icon}</div>
+          <div class="f-pill-text">
+            <span class="f-pill-label">${p.label}</span>
+            <strong class="f-pill-value">${p.val}</strong>
+          </div>
         </div>
-        <div class="service-card-bottom">
-          <span class="s-price">${s.price}</span>
-          <a href="#booking" class="btn btn-secondary btn-sm">Выбрать →</a>
-        </div>
-      </div>
-    `).join('');
+      `).join('');
+    }
+
+    // Replace dropdown options
+    const categorySelect = document.getElementById('category-select');
+    if (categorySelect) {
+      categorySelect.innerHTML = currentNiche.filterOptions.map((opt, i) => `
+        <option value="opt_${i}">${opt}</option>
+      `).join('');
+    }
   }
 
-  // Render News
-  const newsGrid = document.getElementById('news-grid');
-  if (newsGrid) {
-    newsGrid.innerHTML = nicheData.news.map(n => `
-      <div class="news-card">
-        <div>
-          <span class="news-tag">${n.tag}</span>
-          <h3>${n.title}</h3>
-          <p>${n.desc}</p>
-        </div>
-        <div class="news-date">📅 ${n.date}</div>
-      </div>
-    `).join('');
-  }
-
-  // Booking Form submit simulation
-  const bookingForm = document.getElementById('booking-form');
-  const formSuccess = document.getElementById('form-success');
-  const submitBtn = document.getElementById('submit-btn');
+  // Booking Form Submission & Feedback
+  const bookingForm = document.getElementById('booking-filter-form');
+  const alertSuccess = document.getElementById('booking-alert-success');
+  const checkPricesBtn = document.getElementById('check-prices-btn');
 
   if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Отправка...';
+      if (checkPricesBtn) {
+        checkPricesBtn.disabled = true;
+        checkPricesBtn.innerHTML = '<span>Проверка доступности...</span>';
+      }
 
       setTimeout(function() {
-        submitBtn.style.display = 'none';
-        if (formSuccess) formSuccess.style.display = 'block';
+        if (checkPricesBtn) {
+          checkPricesBtn.disabled = false;
+          checkPricesBtn.innerHTML = '<span>Забронировано! ✓</span>';
+        }
+        if (alertSuccess) {
+          alertSuccess.style.display = 'block';
+          alertSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }, 700);
     });
   }

@@ -54,26 +54,136 @@
         <a href="#faq" class="nav-item">Вопросы</a>
       </nav>
 
-      <div class="header-cta-block">
-        <div class="phone-status-pill">
-          <div class="pill-badge">
-            <span class="pill-dot"></span>
-            <span id="pill-status">Автобронь 24/7 онлайн</span>
+      <div class="header-right-group">
+        <div class="header-cta-block">
+          <div class="phone-status-pill">
+            <div class="pill-badge">
+              <span class="pill-dot"></span>
+              <span id="pill-status">Автобронь 24/7 онлайн</span>
+            </div>
+            <a href="tel:+79116988730" class="phone-link" id="header-phone">+7 (911) 698-87-30</a>
           </div>
-          <a href="tel:+79116988730" class="phone-link" id="header-phone">+7 (911) 698-87-30</a>
+          <a href="#booking" class="btn btn-warm" id="header-book-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Забронировать</span>
+          </a>
         </div>
-        <a href="#booking" class="btn btn-warm" id="header-book-btn">
+
+        <!-- Mobile Quick Call Button -->
+        <a href="tel:+79116988730" class="mobile-call-btn" id="mobile-call-btn" aria-label="Позвонить в отель">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button class="burger-btn" id="burger-btn" type="button" aria-label="Открыть навигационное меню" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="burger-box">
+            <span class="burger-line line-1"></span>
+            <span class="burger-line line-2"></span>
+            <span class="burger-line line-3"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay & Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <div class="m-nav-header-left">
+          <span class="mobile-nav-title">Навигация по сайту</span>
+          <span class="mobile-nav-subtitle" id="mobile-nav-brand-sub">Парк-отель «Дом мира»</span>
+        </div>
+        <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Закрыть меню">✕</button>
+      </div>
+
+      <nav class="mobile-nav-list">
+        <a href="#booking" class="mobile-nav-link highlight">
+          <span class="m-nav-icon">📅</span>
+          <div class="m-nav-text">
+            <strong>Карта и свободные даты</strong>
+            <small>Онлайн-модуль мгновенного бронирования</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+        <a href="#services" class="mobile-nav-link">
+          <span class="m-nav-icon">🏡</span>
+          <div class="m-nav-text">
+            <strong>Домики и цены</strong>
+            <small>Коттеджи, шале и комплектация</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+        <a href="#bath" class="mobile-nav-link">
+          <span class="m-nav-icon">♨️</span>
+          <div class="m-nav-text">
+            <strong>Русская баня и чан</strong>
+            <small>Парение на дровах и горячий чан</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+        <a href="#news" class="mobile-nav-link">
+          <span class="m-nav-icon">🎁</span>
+          <div class="m-nav-text">
+            <strong>Спецпредложения</strong>
+            <small>Акции будних дней и именинникам</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+        <a href="#reviews" class="mobile-nav-link">
+          <span class="m-nav-icon">⭐</span>
+          <div class="m-nav-text">
+            <strong>Отзывы гостей</strong>
+            <small>Впечатления и оценки 5.0</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+        <a href="#route" class="mobile-nav-link">
+          <span class="m-nav-icon">📍</span>
+          <div class="m-nav-text">
+            <strong>Маршрут и контакты</strong>
+            <small>Схема проезда и мессенджеры</small>
+          </div>
+          <span class="m-nav-arrow">→</span>
+        </a>
+      </nav>
+
+      <div class="mobile-nav-footer">
+        <div class="mobile-contact-card">
+          <div class="m-contact-top">
+            <span class="pill-dot"></span>
+            <span class="m-contact-status" id="mobile-drawer-status">Служба заботы 24/7 онлайн</span>
+          </div>
+          <a href="tel:+79116988730" class="mobile-phone-link" id="mobile-drawer-phone">+7 (911) 698-87-30</a>
+          <span class="mobile-address-note" id="mobile-drawer-addr">📍 Псковская обл., Печорский р-н</span>
+        </div>
+
+        <div class="mobile-socials-row">
+          <a href="https://t.me" target="_blank" class="m-social-btn tg">Telegram</a>
+          <a href="https://wa.me" target="_blank" class="m-social-btn wa">WhatsApp</a>
+          <a href="https://vk.com" target="_blank" class="m-social-btn vk">ВКонтакте</a>
+        </div>
+
+        <a href="#booking" class="btn btn-warm btn-large full-width mobile-book-cta">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Забронировать</span>
+          <span>Забронировать домик онлайн</span>
         </a>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Main Hero Frame Container -->
   <main class="page-content">
@@ -508,6 +618,31 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Quick Sticky Bottom Action Bar -->
+  <aside class="mobile-floating-bar" id="mobile-floating-bar" aria-label="Быстрые действия">
+    <div class="m-floating-inner">
+      <a href="tel:+79116988730" class="m-float-action call" id="mobile-floating-call" aria-label="Быстрый звонок">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>Позвонить</span>
+      </a>
+      <a href="https://wa.me" target="_blank" class="m-float-action chat" aria-label="Написать в мессенджер">
+        <span class="m-float-badge-icon">💬</span>
+        <span>Чат 24/7</span>
+      </a>
+      <a href="#booking" class="btn btn-warm m-float-book" id="mobile-floating-book">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Выбрать даты</span>
+      </a>
+    </div>
+  </aside>
 
   <script src="script.js"></script>
 </body>
